@@ -21,7 +21,7 @@ function VocabularyTable() {
     const [vocabularyList, setVocabularyList] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/v1/getVocabularyList')
+        fetch('https://new-words-server-one.vercel.app/api/v1/getVocabularyList')
             .then(response => response.json())
             .then(data => {
                 if (data.success) {

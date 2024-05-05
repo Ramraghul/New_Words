@@ -11,16 +11,16 @@ import Slide from '@mui/material/Slide';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-// Updated styled components with custom colors and class name
+
 const CustomStyledAppBar = styled(AppBar)(({ theme }) => ({
     borderRadius: theme.spacing(1),
     backdropFilter: 'blur(8px)',
     WebkitBackdropFilter: 'blur(8px)',
     boxShadow: 'none',
     borderBottom: `1px solid ${theme.palette.divider}`,
-    backgroundColor: 'blue', // Change background color to blue
-    '&.custom-navbar': { // Add custom class name
-        backgroundColor: 'blue', // Change background color to red when using custom class
+    backgroundColor: 'blue', 
+    '&.custom-navbar': {
+        backgroundColor: 'blue', 
     },
 }));
 
@@ -43,7 +43,7 @@ const AnimatedIconsContainer = styled('div')({
     alignItems: 'center',
 });
 
-const NavBar = ({ customClass }) => { // Receive custom class as props
+const NavBar = ({ customClass }) => { 
     const [showIcons, setShowIcons] = useState(false);
     const [count, setCount] = useState(0);
     const navigation = useNavigate();
@@ -51,7 +51,7 @@ const NavBar = ({ customClass }) => { // Receive custom class as props
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get('http://localhost:8080/api/v1/getVocabularyList');
+                const response = await axios.get('https://new-words-server-one.vercel.app/api/v1/getVocabularyList');
                 if (response.data && response.data.count) {
                     setCount(response.data.count);
                 }

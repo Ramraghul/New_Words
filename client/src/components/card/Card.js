@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: 300,
         margin: 'auto',
         marginTop: theme.spacing(4),
-        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', // Updated shadow effect
-        backgroundColor: '#ffffff', // Color effect
+        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+        backgroundColor: '#ffffff',
     },
     textField: {
         marginBottom: theme.spacing(2),
@@ -62,7 +62,7 @@ const AddWordCard = () => {
             }
 
             try {
-                const createNewWord = await axios.post('http://localhost:8080/api/v1/createVocabulary', data)
+                const createNewWord = await axios.post('https://new-words-server-one.vercel.app/api/v1/createVocabulary', data)
                 if (createNewWord.data.success) {
                     setWord('');
                     setMeaning('');
